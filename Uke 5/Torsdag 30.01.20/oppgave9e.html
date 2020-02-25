@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>9e</title>
+</head>
+
+
+
+<body>
+
+    <select id="farge1" onchange="farge()">
+        <option id="blackOne" value="black">Svart</option>
+        <option id="blueOne" value="blue">Mørkeblå</option>
+        <option id="greyOne" value="grey">Lysgrå</option>
+        <option id="greenOne" value="green">Lysgrønn</option>
+        <option id="redOne" value="red">Lysrød</option>
+    </select>
+
+    <div id="resultat"></div>
+
+    <script>
+        var res = document.getElementById('resultat');
+        var farg = document.getElementById('farge1');
+
+        var red1 = document.getElementById('redOne');
+        var green1 = document.getElementById('greenOne');
+        var grey1 = document.getElementById('greyOne');
+        var blue1 = document.getElementById('blueOne');
+        var black1 = document.getElementById('blackOne');
+
+        farge();
+
+        function farge() {
+
+            let textColor = 'black'
+            if (farg.value == 'black' || farg.value == 'blue') textColor = 'White';
+
+            res.innerHTML = `<div style=" 
+                background-color: ${farg.value};
+                height: 50px;
+                width: 100px;
+                color: ${textColor};
+                "> 
+                ${farg.value} 
+                </div>
+                `;
+
+
+
+
+                
+                }
+
+                
+
+            
+
+
+    </script>
+
+
+</body>
+
+</html>

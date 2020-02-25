@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <style>
+        body {
+            background-color: dimgrey;
+        }
+
+        div.test {
+            background-color: darkolivegreen;
+            height: 80px;
+            width: 80px;
+            border: solid 3px black;
+            font-size: 50px;
+            text-align: center;
+            float: left;
+            color: yellow;
+
+
+
+        }
+
+        div.flyt {
+            clear: left;
+            margin-left: 40%;
+        }
+
+        button {
+            background-color: black;
+            color: whitesmoke;
+            height: auto;
+            width: auto;
+            font-size: 20px;
+        }
+
+        p {
+            color:aqua;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="result"></div>
+
+    <script>
+        var result = document.getElementById('result')
+
+        //model
+        var box = ['', '', '', '', '', '', '', '', ''];
+
+
+        //view
+        show();
+        function show() {
+            var html = '';
+            
+            for (var i = 0; i < box.length; i++) {
+                var rekke = i % 3 == 0 ? 'flyt' : '';
+
+                html += `<div onclick="setX(${i})" id="${i}" class ='test ${rekke}'>${box[i]}</div>`;
+
+            }
+                html += `
+                
+                <button onclick="reset()">reset</button>`;
+         var winner = checkWinner() ? '<p>Noen har vunnet</p>' : '';
+                result.innerHTML = html + winner;
+        }
+
+        function checkWinner() {
+            const winnerCombos = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]];
+            return winnerCombos.some(checkOne);
+        }
+
+
+
+        function checkOne(combo) {
+            return box[combo[0]] == box[combo[1]]
+                && box[combo[2]] == box[combo[1]]
+                && (box[combo[0]] == '♥' || box[combo[0]] == '★');
+        }
+
+        //controller
+
+        function setX(x) {
+            if (box[x] === '') {
+                box[x] = '★'
+                setRandomO();
+            }
+
+            show();
+        }
+
+        function setRandomO() {
+            var index = Array.from(box.keys()).filter(i => box[i] === '');
+            var random = Math.floor(Math.random() * index.length);
+            var indexO = index[random];
+            // if (index.length === 0) return;
+            box[indexO] = '♥';
+            show();
+        }
+
+        function reset() {
+            box = ['', '', '', '', '', '', '', '', ''];
+            show();
+
+        }
+
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>

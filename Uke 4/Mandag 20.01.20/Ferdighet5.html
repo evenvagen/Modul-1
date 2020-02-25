@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+ <html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body onload="minFunksjon()">
+
+        <div id="lol">Knapp under dette</div>
+        <button id="kek" onclick="doClick()">Trykk her</button>
+        <img onload="minFunksjon()" src="https://wallpapercave.com/wp/wp3415329.jpg" height="400" width="200">
+<p id="demo"></p>
+        <script>
+
+      
+        document.getElementById('lol').innerHTML = '' + new Date().toTimeString();
+        
+        function minFunksjon() {
+            document.getElementById('demo').innerHTML += '' + new Date().toTimeString() +'<br>';
+            }
+       
+
+        
+      
+        
+        </script>
+    </body>
+</html>

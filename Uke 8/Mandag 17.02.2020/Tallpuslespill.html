@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tallpuslespill</title>
+    <style>
+        .test {
+            color: blue;
+            background-color: azure;
+            padding: 10px;
+            margin: 10px;
+            border: solid cornflowerblue 5px;
+            width: 20px;
+            height: 20px;
+            float: left;
+        }
+
+        .firstInLine {
+            clear: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="result"></div>
+
+    <script>
+
+        var result = document.getElementById('result');
+
+        //controller
+        var puzzle = ['', '', '', '', '', '', '', '', ''];
+
+
+        //view
+
+        show();
+
+        function show() {
+            var html = '';
+
+
+            for (var i = 0; i < puzzle.length; i++) {
+                var line = i % 3 == 0 ? 'firstInLine' : '';
+                html += `<div class="test ${line}">${puzzle[i]}</div>
+            
+                `
+            }
+
+                result.innerHTML = html;
+
+        }
+        
+
+    </script>
+
+</body>
+
+</html>

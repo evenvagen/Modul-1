@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>oppg8fortsettelse</title>
+</head>
+<style>
+    div {
+        height: 40px;
+        width: 40px;
+    }
+
+    .test {
+        color: green;
+    }
+
+    .stilig {
+        background-color: darkblue;
+    }
+
+
+    .text {
+        color:lawngreen;
+    }
+
+    .border {border: solid black 3px;}
+</style>
+
+
+<body>
+
+
+    <div onclick="change(this)" id="boks1">Fox</div>
+
+    <div onclick="change(this)">Fix</div>
+
+    <div onclick="change(this)">Kop</div>
+
+    <div onclick="change(this)">Luk</div>
+
+    <input id="stilig" type="checkbox" onchange="e1(this)">
+    <input id="text" type="checkbox" onchange="e1(this)">
+    <input id="border" type="checkbox" onchange="e1(this)">
+
+
+
+
+    <script>
+
+        var changeDiv = document.getElementById('boks1');
+
+
+
+        function change(xx) {
+
+            changeDiv.classList.remove('test');
+            xx.classList.toggle('test');
+            changeDiv = xx;
+
+
+
+            stilig.checked = changeDiv.classList.contains('stilig');
+            text.checked = changeDiv.classList.contains('text');
+            border.checked = changeDiv.classList.contains('border');
+
+
+
+        }
+
+        function e1(yy) {
+
+
+            changeDiv.classList.toggle(yy.id);
+        }
+
+
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Oppgave 9</title>
+
+    <style>
+        .aogB {
+            color: green;
+        }
+
+        .chill{
+            background-color: blueviolet;
+        }
+
+       
+    </style>
+
+</head>
+
+<body>
+
+    <input id="høyde0" type="range" min="1" max="30" step="1" value="1" onchange="høydeBredde(this)">
+    <input id="bredde0" type="range" min="1" max="30" step="1" value="1" onchange="høydeBredde(this)"> <br />
+    <div id="divA" onclick="areal(this)">A</div>
+    <div id="divB" onclick="areal(this)">B</div>
+    <div id="result"></div>
+
+
+
+    <script>
+        var resultat = document.getElementById('result');
+        var høyde = document.getElementById('høyde0');
+        var bredde = document.getElementById('bredde0');
+        var div1 = document.getElementById('divA');
+        var div2 = document.getElementById('divB');
+        var selectedDivID; //tar vare på id'en til den du trykket på sist
+        var div1areal; // tom variabel - som får verdi av if'en
+        var div2areal; // tom variabel - som får verdi av if'en
+
+
+
+
+
+
+        function areal(dunno) {
+            div1.classList.remove('aogB');
+            dunno.classList.toggle('aogB');
+            div1 = dunno;
+            selectedDivID = dunno.id;
+
+        }
+
+        function høydeBredde(grønn) {
+            var høy = parseInt(høyde.value);
+            var bre = parseInt(bredde.value);
+            var areal = høy * bre;
+
+            if (selectedDivID == "divA") { //er den jeg har trykket på divA?
+                div1areal = areal; //i såfall - lagre den sitt areal i en variabel
+            }
+            if (selectedDivID == "divB") { //det samme bare sjekke mot divB
+                div2areal = areal; //lagre i en annen variabel
+            }
+
+            //største areal er:  (sjekk arealvariabel 1 mot arealvariabel 2) 
+
+            if (div1areal > div2areal) {
+                resultat.innerHTML = 'div1 er større enn div2';
+            }
+               else { resultat.innerHTML = 'div2 er større enn div1' 
+            }
+
+
+            div1.classList.toggle(grønn.id);
+
+            div1.innerHTML = areal;
+
+            console.log(div1areal, div2areal);
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>

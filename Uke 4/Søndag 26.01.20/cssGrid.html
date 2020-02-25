@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<style>
+    body {
+        padding: 0%;
+        margin: 0%;
+    }
+
+    div.page {
+        display: grid;
+        height: 100vh;
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas: 'rød rød'
+        'blå gul'
+        'blå grønn';
+    }
+
+    div.rød {
+        background-color: red;
+        grid-area: rød;
+    }
+
+    div.blå {
+        background-color: blue;
+        grid-area: blå;
+    }
+
+    div.gul {
+        background-color: yellow;
+        grid-area: gul;
+    }
+
+    div.grønn {
+        background-color: green;
+        grid-area: grønn;
+    }
+
+    @media only screen and (max-width: 600px) { div.page {
+        
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-areas: 'rød'
+        'blå'
+        'gul'
+        'grønn';
+    }
+
+
+    }
+</style>
+
+<body>
+    <div class="page">
+        <div class="rød">RED</div>
+        <div class="blå">BLUE</div>
+        <div class="gul">YELLOW</div>
+        <div class="grønn">GREEN</div>
+    </div>
+
+
+</body>
+
+</html>

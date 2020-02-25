@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kalkulator</title>
+</head>
+
+
+
+<body>
+    <p>Oppgave 7</p>
+    <input id="tallA" type="range" min="1" max="100" step="1" oninput="calculate()" value="1" />
+    <input id="tallB" type="range" min="1" max="100" step="1" oninput="calculate()" value="1" />
+    <div id="resultat"></div>
+
+    <script>
+        var forsteTallInput = document.getElementById('tallA')
+        var andreTallInput = document.getElementById('tallB')
+        var resultatsDiv = document.getElementById('resultat')
+
+        calculate();
+
+        function calculate() {
+
+            var tall1 = parseInt(forsteTallInput.value);
+            var tallB = parseInt(andreTallInput.value);
+            var sum = tall1 + tallB;
+            var diffrence = tall1 - tallB;
+            var quotient = tall1 / tallB;
+            var product = tall1 * tallB;
+
+            resultatsDiv.innerHTML = '' +
+                tall1 + '+' + tallB + '=' + sum + '<br/>'
+                + tall1 + '-' + tallB + '=' + diffrence + '<br/>'
+                + tall1 + '/' + tallB + '=' + quotient + '<br/>'
+                + tall1 + '*' + tallB + '=' + product;
+
+
+
+
+
+        }
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>

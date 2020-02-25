@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #luft {
+            padding-top: 10%;
+        }
+
+        #spørsmål1 {
+            height: auto;
+            width: auto;
+            background-color: gold;
+            float: left;
+            border: 3px solid black;
+        }
+
+        #spørsmål2 {
+            height: auto;
+            width: auto;
+            background-color: gold;
+            float: left;
+            border: 3px solid black;
+            margin-left: 50px;
+        }
+
+        #spørsmål3 {
+            height: auto;
+            width: auto;
+            background-color: gold;
+            float: left;
+            border: 3px solid black;
+            margin-left: 90px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="luft"></div>
+    <div id="spørsmål1" onclick=change()>Hva er hovedstaden i Norge?</div>
+    <div id="spørsmål2" onclick=change2()>Hva er etternavnet mitt?</div>
+    <div id="spørsmål3" onclick=change3()>Hvem har låten mr.Rager?</div>
+
+
+    <script>
+        var q1 = document.getElementById('spørsmål1');
+        var q2 = document.getElementById('spørsmål2');
+        var q3 = document.getElementById('spørsmål3');
+
+
+        function change() { q1.innerText = 'Oslo' };
+        function change2() { q2.innerText = 'Vågen' };
+        function change3() { q3.innerText = 'Kid Cudi' };
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

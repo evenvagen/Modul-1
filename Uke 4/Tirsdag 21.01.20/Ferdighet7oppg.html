@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Div med sliders</title>
+
+    <style>
+    #resultat {background-color: blue;}
+    </style>
+</head>
+<body>
+
+<input id = "bredde" type="range" min="1" max="1000" step="10" oninput="calculate()" value="1"/>
+<input id = "høyde" type="range" min="1" max="1000" step="10" oninput="calculate()" value="1"/>
+<div id="resultat"></div>
+
+<script>
+
+var breddeDiv = document.getElementById('bredde');
+var høydeDiv = document.getElementById('høyde');
+var resultatDivZ = document.getElementById ('resultat');
+
+var brDi = parseInt(breddeDiv.value);
+var høDi = parseInt (høydeDiv.value);
+var areal = brDi * høDi;
+var omkrets = (brDi * høDi) *2;
+
+
+
+
+function calculate() {resultatDiv.innerHTML = '<div style="'
+                + 'width: ' + breddeDiv.value + 'px;'
+                + 'height: ' + høydeDiv.value + 'px;' 
+                + '">';
+                resultatDiv = resultatDivZ.innerHTML;
+}
+
+
+
+
+
+
+
+
+</script>
+    
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        body {
+            padding: 0%;
+            margin: 0%
+        }
+
+        #hele {
+            display: grid;
+            height: 100vh;
+            
+        }
+
+        #first {
+            background-color: black;
+            color: whitesmoke;
+        }
+
+        #second {
+            background-image: url("https://titan.uio.no/sites/default/files/styles/fullwidth/public/thumbnails/image/colourbox11605202_red_0.jpg?itok=2BL_lh1E");
+        }
+
+        #third {
+            background-color: cornflowerblue;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div id=hele>
+        <div id="first" onclick="change1(this)">Opp</div>
+        <div id="second" onclick="change2(this)">Hvit</div>
+        <div id="third" onclick="change3(this)">Katt</div>
+    </div>
+
+
+
+
+    <script>
+
+        var første = document.getElementById('first');
+        var andre = document.getElementById('second');
+        var tredje = document.getElementById('third');
+
+
+        function change1(opp1) {
+
+            første.innerHTML = 'Ned';
+
+        }
+
+        function change2(hvit1) {
+            andre.innerHTML = 'Sort';
+        }
+
+        function change3(katt1) {
+            tredje.innerHTML = 'Hund';
+        }
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

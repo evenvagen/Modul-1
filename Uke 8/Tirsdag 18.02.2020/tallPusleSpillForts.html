@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tallpuslespill</title>
+    <style>
+        .test {
+            color: blue;
+            background-color: azure;
+            padding: 10px;
+            margin: 10px;
+            border: solid cornflowerblue 5px;
+            width: 20px;
+            height: 20px;
+            float: left;
+        }
+
+        .firstInLine {
+            clear: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="result"></div>
+
+    <script>
+
+        var result = document.getElementById('result');
+
+        //controller
+        var puzzle = [1, 2, 3, 4, 5, 6, 7, 8, 0];
+        var count = 0;
+
+
+        //view
+
+        show();
+
+        function show() {
+            var html = '';
+
+
+            for (var i = 0; i < puzzle.length; i++) {
+                var flipper = puzzle[i];
+                var zero = flipper === 0;
+                var blank = zero ? '' : flipper;
+
+                var line = i % 3 == 0 ? 'firstInLine' : '';
+
+                html += `<div onclick="Nombres(${i})" class="test ${line}">${blank}</div>
+            
+                `
+            }
+
+            html += `<div style="clear: both;">Antall trekk: ${count}</div>`;
+           result.innerHTML = html;
+
+            
+
+
+
+        }
+
+        // controller 
+
+        function Nombres(move) {
+            var blankIndex = findBlankIndex(move);
+            if (blankIndex == null) return;
+            count++;
+            puzzle[blankIndex] = puzzle[move];
+            puzzle[move] = 0;
+            show();
+        
+        }
+
+        function findBlankIndex(apple) {
+            for ( var delta of [-3, -1, 1, 3]) {
+                var newIndex = apple + delta;
+                if(newIndex < 0 || newIndex >= puzzle.length) continue;
+                if( puzzle[newIndex] === 0) {
+                return newIndex;
+            
+                }
+            }
+            return null;
+        }
+
+
+        
+        
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <style>
+        #no2 {
+            float: left;
+            clear: left
+        }
+
+        #no3 {
+            float: left;
+            clear: left;
+
+        }
+
+        #test {clear:left;
+        margin-left: 7px;
+        height: 20px;
+        width: 60px;
+        border:solid 2px black;
+        
+        }
+    </style>
+</head>
+
+<body>
+
+    
+
+    <div id="no1">
+
+        <button onclick="doSomething(this)">1</button>
+
+        <button onclick="doSomething(this)">2</button>
+
+        <button onclick="doSomething(this)">3</button>
+
+    </div>
+
+
+    <div id="no2">
+
+        <button onclick="doSomething(this)">4</button>
+
+        <button onclick="doSomething(this)">5</button>
+
+        <button onclick="doSomething(this)">6</button>
+
+    </div>
+
+    <div id="no3">
+
+        <button onclick="doSomething(this)">7</button>
+
+        <button onclick="doSomething(this)">8</button>
+
+        <button onclick="doSomething(this)">9</button>
+
+    </div>
+
+     <div id="test"></div>
+
+
+
+
+
+
+
+
+
+    <script>
+        var ok = document.getElementById('test')
+
+        function doSomething(jj) {
+            ok.innerHTML += jj.innerHTML;
+
+            if (ok.innerText == '7777') {
+                ok.innerText = 'correct';
+            }
+
+        }
+    </script>
+
+
+
+</body>
+
+</html>

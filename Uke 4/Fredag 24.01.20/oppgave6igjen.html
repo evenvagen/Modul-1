@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+
+
+</head>
+
+<body>
+    <input id="borderRadius" type="range" min="1" max="100" step="10" oninput=funky()>
+    <input id="slider" type="range" min="77" max="777" step="7" oninput="funky()">
+
+    <select id="farge" onchange="funky()">
+        <option value="red">Rød</option>
+        <option value="green">Grønn</option>
+        <option value="blue">Blue</option>
+
+    </select>
+
+    <select id="rammeRundt" onchange="funky()">
+        <option value="black">Sort</option>
+        <option value="grey">Grå</option>
+        <option value="none">Ingen border</option>
+
+    </select>
+
+   
+
+
+
+
+
+    <div id="kygo"></div>
+
+    <script>
+
+        var dra = document.getElementById('slider');
+        var farg = document.getElementById('farge');
+        var hula = document.getElementById('kygo');
+        var brbr = document.getElementById('borderRadius');
+        var ramme = document.getElementById('rammeRundt');
+
+        funky();
+
+        function funky() {
+
+
+            hula.innerHTML =
+                '<div style=" '
+                + 'background-color: ' + farg.value + ';'
+                + 'height: ' + dra.value + 'px;'
+                + 'width: ' + dra.value + 'px;'
+                + 'border-radius: ' + brbr.value + 'px;'
+                + 'border: solid 10px ' + ramme.value + ';'
+                + '">';
+
+
+        }
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>7a</title>
+</head>
+
+<body>
+
+    <div id="resultat"></div>
+    
+
+    <script>
+      
+        var resultatDiv = document.getElementById('resultat');
+        calculate();
+
+        function calculate() {
+            var bredde = 50 + Math.floor(Math.random() * 20);
+            var høyde = 50 + Math.floor(Math.random() * 70);
+            var rammeSize = 5 + Math.floor(Math.random() * 20);
+            
+            var tekst = 'bredde: ' + bredde + '<br/>' + 'høyde: ' + høyde + '<br/>' + 'border: ' + rammeSize;
+
+            resultatDiv.innerHTML = '<div style= "'
+                + 'background-color: red;'
+                + 'height: ' + høyde + 'px;'
+                + 'width: ' + bredde + 'px;'
+                + 'border: solid black;'
+                + 'border-width: ' + rammeSize + 'px;'
+                + '">';
+
+                resultatDiv.innerHTML +=  tekst;
+
+                
+
+
+
+        }
+
+
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        div {
+            width: 100px;
+            height: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Ferdighet 9c - Valgsetninger - Sammenligne to objekter (f.eks. er det samme div-element i to elementer?)</p>
+    <div onclick="doClick(this)" style="background-color: pink">A</div>
+    <div onclick="doClick(this)" style="background-color: lightgreen">B</div>
+    <div onclick="doClick(this)" style="background-color: lightblue">C</div>
+    <div id="info" onclick="doClick(this)"></div>
+
+    <script>
+        var infoDiv = document.getElementById('info');
+        
+        var knapp;
+        var knappSist;
+        var knappTrykketFørSist;
+
+        doclick()
+
+        function doClick(buttonClicked) {
+            knappTrykketFørSist = knappSist;
+            knappSist = knapp;
+            knapp = buttonClicked;
+            infoDiv.innerHTML = ` ${knapp.innerHTML} <br/> ${knappSist.innerHTML} <br/> ${knappTrykketFørSist.innerHTML}`;
+
+            if (buttonClicked == knappSist) {
+                infoDiv.innerHTML += `<br/> du trykte på samme knapp: `;
+            }
+            if (buttonClicked == knappSist && buttonClicked == knappTrykketFørSist) {
+                infoDiv.innerHTML += `<br/> du har trykka 3 ganger`;
+            }
+
+        }
+            
+
+
+
+
+
+    </script>
+</body>
+
+</html>

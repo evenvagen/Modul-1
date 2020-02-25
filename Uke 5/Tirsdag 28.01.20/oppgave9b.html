@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>9b</title>
+</head>
+
+<style>
+    div {
+        float: left;
+    }
+
+    #k1 {
+        font-size: 30px;
+    }
+
+    #k2 {
+        clear: left;
+        font-size: 30px;
+    }
+
+    #k3 {
+        clear: left;
+        font-size: 30px;
+    }
+
+    #resultat {
+        clear: left;
+    }
+</style>
+
+<body>
+
+
+
+    <div id="k1">
+        <div onclick="change(this)">1</div>
+        <div onclick="change(this)">2</div>
+        <div onclick="change(this)">3</div>
+    </div>
+
+    <div id="k2">
+        <div onclick="change(this)">4</div>
+        <div onclick="change(this)">5</div>
+        <div onclick="change(this)">6</div>
+    </div>
+
+    <div id="k3">
+        <div onclick="change(this)">7</div>
+        <div onclick="change(this)">8</div>
+        <div onclick="change(this)">9</div>
+    </div>
+
+    <br>
+
+   
+
+
+    <br />
+    <div id="resultat"></div>
+    <button onclick="clearDisplay()">Start Over</button>
+
+    <script>
+        var result = document.getElementById('resultat');
+        var enteredSoFar = '';
+        var correctCode = '5533';
+
+
+
+        function change(utidiv) {
+
+            
+            enteredSoFar += utidiv.innerHTML;
+            result.innerHTML = enteredSoFar;
+
+
+            if(enteredSoFar.length == 4){
+                enteredSoFar = '';
+            }
+
+            if (result.innerText == correctCode) { 
+                result.innerText = 'correct';
+                 }
+           
+        }
+        function clearDisplay(){
+            enteredSoFar = '';
+            result.innerHTML = enteredSoFar;
+        }
+
+        
+        
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nytt Forsøk</title>
+</head>
+
+<body>
+
+    <input id="bredde" type="range" min="1" max="1000" step="1" onchange="calculate()">
+    <input id="høyde" type="range" min="1" max="1000" step="1" onchange="calculate()">
+    <div id="resultat"></div>
+
+
+    <script>
+        var breddeV = document.getElementById('bredde');
+        var høydeV = document.getElementById('høyde');
+        var resultat = document.getElementById('resultat');
+
+
+
+        function calculate() {
+
+            var ok = (breddeV.value);
+            var ik = (høydeV.value);
+            var areal = ok * ik;
+            var omkrets = (ok * ik) * 2;
+
+
+            resultat.innerHTML = '' +
+            'areal: ' + ok + '+' + ik + '=' + areal + '<br/>'
+            + 'omkrets: ' + ok + '+' + ik + '=' + omkrets;
+
+            console.log(calculate)
+
+
+
+
+        }
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

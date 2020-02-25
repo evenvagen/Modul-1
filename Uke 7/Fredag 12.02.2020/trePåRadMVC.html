@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>tre på rad mvc</title>
+    <style>
+        div.all {
+            background-color: greenyellow;
+            margin: 10px;
+        }
+
+        div.first {
+            clear: left;
+        }
+    </style>
+</head>
+
+<div id="htmlDiv"></div>
+
+<body>
+
+    <script>
+        var trePåRad = document.getElementById('htmlDiv');
+
+
+        //model
+        var board = ['', '', '', '', '', '', '', '', '']
+
+
+        //view
+        show();
+        function show() {
+            var html = '';
+            for (i = 0; i < 9; i++) {
+                var first = i % 3 == 0 ? 'first' : '';
+                html += `
+            <div class= "all${board[i]} first ${first}">${board[i]}</div>
+            `;
+            }
+
+            trePåRad.innerHTML += html;
+
+        }
+
+
+
+        //controller
+
+    </script>
+
+</body>
+
+</html>

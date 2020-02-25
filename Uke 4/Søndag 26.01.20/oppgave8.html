@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Oppgave 8</title>
+<style>
+    .stilig {background-color:darkblue;}
+    .bredde {width: 90px;}
+    .ramme {border: solid 3px gold;}
+    .farge {color:whitesmoke;}
+    .høyde {height: 40px;}
+    .grønnfarve {background-color: green;}
+    
+    
+
+</style>
+</head>
+
+<input id="v1" type="checkbox" onchange="e1(this)">
+<input id="v2" type="checkbox" onchange="e2()">
+<input id="v3" type="checkbox" onchange="e3()">
+<input id="v4" type="checkbox" onchange="e4()">
+<input id="v5" type="checkbox" onchange="e5()">
+<div id="div1result">blueDabaDee</div>
+
+
+
+<script>
+
+    var resultat = document.getElementById('div1result');
+    var resultatDiv2 = document.getElementById('divNo2')
+
+
+    function e1(xx) {
+var isChecked = xx.checked;
+resultat.classList.toggle('stilig', isChecked);
+}
+
+function e2() {
+    var isCheckedWidth = document.getElementById('v2').checked;
+    resultat.classList.toggle('bredde', isCheckedWidth);
+}
+
+function e3() {
+    var rammeRundtDiv = document.getElementById('v3').checked;
+    resultat.classList.toggle('ramme', rammeRundtDiv);
+}
+
+function e4() {
+    var farve = document.getElementById('v4').checked;
+    resultat.classList.toggle('farge', farve);
+}
+
+function e5() {
+var lengde = document.getElementById('v5').checked;
+resultat.classList.toggle('høyde', lengde);
+
+}
+
+
+
+</script>
+
+
+<body>
+    
+</body>
+</html>

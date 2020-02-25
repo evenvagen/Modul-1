@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tre på rad</title>
+</head>
+
+<style>
+    div {
+        height: 100px;
+        width: 100px;
+        background-color: black;
+        float: left;
+        margin: 3px;
+        color: green;
+        font-size: 40px;
+        text-align: center;
+        padding: 10px;
+    }
+
+    div.no2 {
+        clear: left;
+    }
+</style>
+
+<body>
+
+    <div onclick="greenX(this)"></div>
+    <div onclick="greenX(this)"></div>
+    <div onclick="greenX(this)"></div>
+
+
+    <div class="no2" onclick="greenX(this)"></div>
+    <div onclick="greenX(this)"></div>
+    <div onclick="greenX(this)"></div>
+
+
+
+    <div class="no2" onclick="greenX(this)"></div>
+    <div onclick="greenX(this)"></div>
+    <div onclick="greenX(this)"></div>
+
+    <script>
+
+        function greenX(klikk) {
+            if (klikk.innerHTML !== 'x' && klikk.innerHTML !== 'o')
+            {klikk.innerHTML = 'x';
+            
+            var divs1 = document.getElementsByTagName('div');
+            var divs2 = new Array();
+
+               
+
+            for (var i = 0; i < divs1.length; i++) {
+                if (divs1[i].innerHTML !== 'x' && divs1[i].innerHTML !== 'o') {
+                    divs2.push(divs1[i]);
+                }
+            }
+
+            if (divs2.length > 0) {
+                var index = Math.floor(Math.random() * divs2.length);
+                divs2[index].innerHTML = 'o';
+                divs2[index].style.color = 'blue';
+            }
+
+            }
+        }
+
+
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+div {
+    float: left;
+    background-color: beige;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    vertical-align: middle;
+    font-family: helvetica;
+    font-size: 200%;
+    border: #bbbbaa solid 4px;
+    border-radius: 10px;
+}
+
+div.resultBox {
+    width: 344px;
+    text-align: right;
+}
+
+div.firstInRow {
+    clear: left;
+}
+</style>
+<body>
+    
+    <div id="resultBox" class="resultBox" id="screen"></div>
+    
+    <div onclick="addCharachter('7')" class="firstInRow">7</div>
+    <div onclick="addCharachter('8')">8</div>
+    <div onclick="addCharachter('9')">9</div>
+    <div onclick="addCharachter('/')">÷</div>
+    
+    <div onclick="addCharachter('4')" class="firstInRow">4</div>
+    <div onclick="addCharachter('5')">5</div>
+    <div onclick="addCharachter('6')">6</div>
+    <div onclick="addCharachter('*')">×</div>
+    
+    <div onclick="addCharachter('1')" class="firstInRow">1</div>
+    <div onclick="addCharachter('2')">2</div>
+    <div onclick="addCharachter('3')">3</div>
+    <div onclick="addCharachter('-')">-</div>
+    
+    <div onclick="addCharachter('0')" class="firstInRow">0</div>
+    <div onclick="clearResult('')">C</div>
+    <div onclick="calculate()">=</div>
+    <div onclick="addCharachter('+')">+</div>
+
+
+    <script>
+
+        var resBox = document.getElementById('resultBox');
+
+       function addCharachter(x) {
+
+        resBox.innerHTML += x;
+
+       }
+       function clearResult(clear) {
+           resBox.innerHTML = clear;
+
+       }
+
+       function calculate() {
+           resBox.innerHTML = eval(resBox.innerHTML);
+       }
+    </script>
+    
+</body>
+</html>

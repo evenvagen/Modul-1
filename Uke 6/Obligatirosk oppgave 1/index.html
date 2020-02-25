@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>UNIT TESTING</title>
+
+    <script src="lib.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <input type="text" oninput="handleNewText(this)" />
+    <div id="unitTest"> </div>
+
+    <script>
+        function handleNewText(inputTag) {
+            var text = inputTag.value;
+            var gyldigDato = datoErGyldig(text);
+            document.getElementById('unitTest').innerHTML = gyldigDato;
+        }
+    </script>
+
+</body>
+
+</html>
