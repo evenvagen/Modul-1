@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops</title>
+</head>
+
+<body>
+
+    <div id="result"></div>
+
+    <script>
+        const result = document.getElementById('result');
+
+        //model
+
+        const user = ['even', 'joe', 'jarle', 'mike'];
+
+        const passord = ['Test', 'Bmw'];
+
+
+        //view
+
+
+        result.innerHTML = `
+            <button onclick="basicLoop()">Users</button>
+            <button onclick="passwords()">Password</button>
+            <input type="text">`
+
+
+
+        function basicLoop() {
+            for (let i = 0; i < user.length; i++)
+                result.innerHTML += `<div>${user[i]}</div>`;
+        }
+
+        function passwords() {
+            for (let i = 0; i < passord.length; i++)
+                result.innerHTML += `<div>${passord[i]}</div>`;
+        }
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>

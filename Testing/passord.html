@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .error{
+            font-size: 15px;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="result"></div>
+
+
+    <script>
+
+        document.getElementById('result').innerHTML = `
+    <input id="user" type="text"> </br>
+    <input id="passord" type="password"> </br>
+    <button onclick="password()">OK</button>
+        `
+
+        //controller
+        function password() {
+            if (document.getElementById('user').value === 'yes' && document.getElementById('passord').value === 'hei')
+            {
+            document.getElementById('result').innerHTML = 'Logged in'}
+
+            else {
+                document.getElementById('result').innerHTML += `<div class="error">feil brukernavn/passord</div>`
+            }
+     }
+
+
+
+
+
+    </script>
+</body>
+
+</html>
