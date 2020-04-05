@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="controller.js"></script>
+</head>
+
+<body>
+    <div id="content">
+    </div>
+
+    <script>
+        // hjelpevariable for både view og controller
+        var contentDiv = document.getElementById('content');
+
+        // model
+        let numbers = [9, 5, 3, 8, 7];
+        let chosenPole = 'ingen';
+    
+
+        // view
+
+        show();
+        function show() {
+            let disabledOrNot = chosenPole == 'ingen' ? "disabled" : ""; //ternary operator
+            let svgInnerHtml = '';
+            for (let i = 0; i < numbers.length; i++) {
+
+                var strokeTernary = (chosenPole == i + 1) ? 'black' : '';
+
+                svgInnerHtml += createBar(numbers[i], i + 1, strokeTernary);
+
+            }
+            contentDiv.innerHTML = `
+                <svg id="chart" width="500" viewBox="0 0 80 60">
+                    ${svgInnerHtml}
+                </svg><br/>
+                Valgt stolpe: <b>${chosenPole}</b>
+                <br />
+                Verdi:
+                <input id="addBar" type="number" min="1" max="10" />
+                <button onclick="add()">Legg til stolpe</button>
+                <button ${disabledOrNot} onclick="changePole()">Endre valgt stolpe</button><br />
+                <button  ${disabledOrNot} onclick="removePole()">Fjerne valgt stolpe</button>
+                `;
+        }
+
+        function createBar(number, barNo, stroke) {
+            const width = 8;
+            const spacing = 2;
+            let x = (barNo - 1) * (width + spacing);
+            let height = number * 6;
+            let y = 60 - height;
+            let color = calcColor(1, 10, barNo);
+            return `<rect stroke="${stroke}" onclick="choose(${barNo})" width="${width}" height="${height}"
+                                x="${x}" y="${y}" fill="${color}"></rect>`;
+        }
+
+        function calcColor(min, max, val) {
+            var minHue = 240, maxHue = 0;
+            var curPercent = (val - min) / (max - min);
+            var colString = "hsl(" + ((curPercent * (maxHue - minHue)) + minHue) + ",100%,50%)";
+            return colString;
+        }
+
+    </script>
+
+</body>
+
+</html>
